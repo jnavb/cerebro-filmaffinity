@@ -7,7 +7,7 @@ export const icon = filmaffinityIcon;
 
 const placeholderWait = {icon,
                 id: "Wait1",
-                title: 'Type peli <movie> to begin'
+                title: 'Type peli <movie>'
 }
 const placeholderSearching = {icon,
                 id: "Wait2",
@@ -25,14 +25,14 @@ export const fn = ({term, display, actions, hide }) => {
   			return
   		}
   		const results = items.map(item => {
-        const id = item['url'].substring(8, item['url'].length - 5);
+        const film = transformFilm(item);
   			return ({
           icon,
-  			  id: id,
-  			  title: item['title'],
-          subtitle: id,
+  			  id: film.id,
+  			  title: film.title,
+          subtitle: film.subtitle,
           onSelect: () => actions.open(`https://www.filmaffinity.com/es/reviews/1/${item['url'].substring(8)}`),
-  		    getPreview: () => <Prev id={id} key={id}/>
+  		    getPreview: () => <Prev id={film.id} key={film.id}/>
         })
       })
   		display(results)
@@ -41,5 +41,23 @@ export const fn = ({term, display, actions, hide }) => {
   }
 }
 
+const transformFilm = (filmToParse) => {
+  const film = {};
+  film.id = filmToParse['url'].substring(8, filmToParse['url'].length - 5);
+  film.title = filmToParse['title'];
+  film.subtitle = '';
+  const { title } = film;
+  let needSubtitle = title.indexOf(':');
+  if(needSubtitle != -1) {
+    film.title = title.substring(0, needSubtitle);
+    film.subtitle = title.substring(needSubtitle + 1, title.length);
+  } 
+  needSubtitle = title.indexOf('(');
+  if(needSubtitle != -1) {
+    film.title = title.substring(0, needSubtitle);
+    film.subtitle = title.substring(needSubtitle, title.length);
+  } 
+  return film;
+}
 
 
