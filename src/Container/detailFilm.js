@@ -1,6 +1,7 @@
 import React from 'react'
 import Film from '../Component/film'
 import { detailFilm } from '../api'
+import { Loading } from 'cerebro-ui'
 
 export class Prev extends React.Component {
   constructor(props) {
@@ -15,11 +16,8 @@ export class Prev extends React.Component {
   }
   render() {
     const { data } = this.state;
-    if(!data) {
-      return (<div><h1>{"Loading..."}</h1></div>);
-    } else {
-    return <div><Film {...data} /></div>
-    }
+    return (data) ? <div><Film {...data} /></div>
+                  : <div><Loading /></div>
   }
 }
 
