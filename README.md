@@ -1,8 +1,8 @@
 # cerebro-filmaffinity
 Cerebro plugin to search movies info at the filmaffinity page
 
-##TODO
-###Main
+## TODO
+### Main
 - Detail => css,js,react
 - Refactor Api
 - Refactor main index
