@@ -20,9 +20,3 @@ export const detailFilm = memoize((id) =>(
 ))
 
 
-/*
-TODO
-  -Detail => css,js,react
-  -Refactor Api
-  -Score on header
-*/

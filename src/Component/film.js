@@ -1,10 +1,6 @@
 import React from 'react'
 import styles from './styles.css'
 
-/*TODO - add min to duration prop
-       - Fix/erase imdbRating, idmbVotes, Genre, Released
-*/
-
 export const Film = (({
   title, year, poster_big, sinopsis, director,
   script, rating, duration, cast
