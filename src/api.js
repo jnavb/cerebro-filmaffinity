@@ -19,4 +19,3 @@ export const detailFilm = memoize((id) =>(
   .then(response => response.json())
 ))
 
-

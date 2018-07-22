@@ -26,12 +26,9 @@ export const fn = ({term, display, actions, hide }) => {
     display(placeholderSearching)
   	const filmTerm = match[1]
   	fetchFilms(filmTerm).then(items => {
-  		if (!items){
-  			return
-  		}
-  		const results = items.map(item => {
+      const results = items.map(item => {
         const film = transformFilm(item);
-  			return ({
+        return ({
           icon,
   			  id: film.id,
   			  title: film.title,
@@ -40,10 +37,14 @@ export const fn = ({term, display, actions, hide }) => {
   		    getPreview: () => <Prev id={film.id} key={film.id}/>
         })
       })
-      //(results) ? display(results) : display(placeholderNotFound)
-      display(results)
-      hide(placeholderSearching.id)
-  	}) 
+      if(items.length){
+        hide(placeholderSearching.id)
+        display(results)
+      } else {
+        display(placeholderNotFound)
+        hide(placeholderSearching.id)
+      }
+  	})   
   }
 }
 
@@ -65,5 +66,4 @@ const transformFilm = (filmToParse) => {
   } 
   return film;
 }
-
 
