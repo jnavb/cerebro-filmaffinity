@@ -6,12 +6,16 @@ import Prev from './Container/detailFilm'
 export const icon = filmaffinityIcon;
 
 const placeholderWait = {icon,
-                id: "Wait1",
+                id: "0",
                 title: 'Type peli <movie>'
 }
 const placeholderSearching = {icon,
-                id: "Wait2",
+                id: "1",
                 title: "Searching movies..."
+}
+const placeholderNotFound = {icon,
+                id: "2",
+                title: "No movies found"
 }
 export const fn = ({term, display, actions, hide }) => {
   display(placeholderWait)
@@ -35,7 +39,8 @@ export const fn = ({term, display, actions, hide }) => {
   		    getPreview: () => <Prev id={film.id} key={film.id}/>
         })
       })
-  		display(results)
+      //(results) ? display(results) : display(placeholderNotFound)
+      display(results)
       hide(placeholderSearching.id)
   	}) 
   }
@@ -49,8 +54,8 @@ const transformFilm = (filmToParse) => {
   const { title } = film;
   let needSubtitle = title.indexOf(':');
   if(needSubtitle != -1) {
-    film.title = title.substring(0, needSubtitle);
-    film.subtitle = title.substring(needSubtitle + 1, title.length);
+    film.title = title.substring(needSubtitle + 1, title.length);
+    film.subtitle = title.substring(0, needSubtitle);
   } 
   needSubtitle = title.indexOf('(');
   if(needSubtitle != -1) {
