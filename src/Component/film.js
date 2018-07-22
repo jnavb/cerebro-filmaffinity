@@ -16,8 +16,8 @@ export const Film = (({
       </div>
       <div className={styles.body}>
         <div className={styles.image}>
-          <img src={poster_big} className={styles.poster}/> 
-          <div className={styles.footer}>
+          <img src={poster_big} className={styles.imagePoster}/> 
+          <div className={styles.imageFooter}>
             { duration && <span>{duration} min.</span> }
             { year && <span>{year}</span> }
           </div>
