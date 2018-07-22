@@ -1,6 +1,7 @@
 .preview {
   font-size: 1em;
   align-self: flex-start;
+  height: 100%;
 }
 
 .header{
@@ -9,6 +10,7 @@
   align-items: center;
   margin-bottom: 0.5em;
   font-size: 1.3em;
+  justify-content: space-between;
 }
 
 .rating {
@@ -27,37 +29,22 @@
 }
 
 .title {
-  width: 80%;
+  width: 70%;
   font-size: 1em;
   margin-left: 5px;
   text-align: center;
 }
 
-.imdbRating {
-  color: var(--secondary-font-color);
-  font-size: .75em;
-}
-
-
-.imdbMeta {
-  color: var(--secondary-font-color);
-  font-size: .8em;
-  margin-bottom: 0.5em;
-}
-
-.imdbMeta > span:first-child::before {
-  display: none;
-}
-
-.imdbMeta > span::before {
-  content: "|";
-  color: var(--secondary-font-color);
-  margin: 0px 5px;
+.body {
+  display: flex;
+  align-items: flex-start;
 }
 
 .image {
   font-size: .9em;
   line-height: 150%;
+  min-width: 8em;
+  margin-right: 1em;
 }
 .image::after {
   display: block;
@@ -66,29 +53,55 @@
 }
 
 .poster {
-  max-width: 6em;
-  margin-right: 10px;
+  height: 12em;
 }
 
-
-.imdbDetails {
+.footer {
+  color: var(--secondary-font-color);
   font-size: .9em;
+  margin-bottom: 0.5em;
+  text-align: center;
 }
-.imdbDetails dt {
+
+.footer > span:first-child::before {
+  display: none;
+}
+
+.footer > span::before {
+  content: "|";
+  color: var(--secondary-font-color);
+  margin: 0px 5px;
+}
+
+.details {
+  font-size: .9em;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  display: flex;
+  flex-direction: column;
+  height: 12em;
+  justify-content: space-around;
+}
+.details dt {
   float: left;
-  width: 75px;
   padding: 0;
-  margin: 0;
-  text-align: left;
-  margin-right: 2%;
+  text-align: center;
   color: var(--secondary-font-color);
 }
 
-.imdbDetails dd {
+.details dd {
   float: left;
-  width: 75%;
   padding: 0;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
+
+
+.sinopsis {
+  overflow: hidden;
+  height: 9em;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+}

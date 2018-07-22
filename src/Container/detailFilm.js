@@ -7,27 +7,78 @@ export class Prev extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      detailFilm: null
+      filmPrev: null
     }
   }
   componentDidMount() {
     const { id } = this.props;
-    detailFilm(id).then(data => {
-      const detailFilm = transformDetailFilm(data);
-      this.setState({ detailFilm });
+    detailFilm(id).then(filmPrev => {
+      if (filmPrev)
+        filmPrev = transformDetailFilm(filmPrev);
+      this.setState({ filmPrev });
     })
   }
   render() {
-    const { detailFilm } = this.state;
-    return (detailFilm) ? <Film {...detailFilm}/>
+    const { filmPrev } = this.state;
+    return (filmPrev) ? <Film {...filmPrev}/>
                   : <Loading />
   }
 }
-const transformDetailFilm = (detailFilmToParse) => {
-  const detailFilm = detailFilmToParse;
-  if (Array.isArray(detailFilm.cast)) 
-    detailFilm.cast = detailFilm.cast.slice(0,6).join(' ');
-  return detailFilm;
+const transformDetailFilm = (film) => {
+  if ( Array.isArray(film.cast)) 
+    film.cast = film.cast.slice(0,6).join(', ');  
+  
+  if (film.director)
+    film.director = deleteSecundaries(film.director);
+  
+  if (film.script)
+    film.script = deleteSecundaries(film.script);
+
+  film.ratingBackground = calculateBackground(film.rating);
+  
+  return film;
+}
+
+
+const deleteSecundaries = (people) => { 
+  let needsDelete = people.indexOf('(');
+  if(needsDelete != -1) {
+     people = people.substring(0, needsDelete);
+  } 
+  needsDelete = people.indexOf(',');
+  if (needsDelete != -1)
+    people = people.split(',',2).join(',');
+  return people;
+} 
+
+
+const calculateBackground = (rating) => {
+  const ratingStyle = {}; 
+  if (rating >= 8) {
+    ratingStyle.background = 'ForestGreen';
+    ratingStyle['border-color'] = 'gold';
+  }
+  if (rating >= 7 && rating < 8) {
+    ratingStyle.background = 'ForestGreen';
+    ratingStyle['border-color'] = 'white';
+  }
+  if (rating >= 6 && rating < 7) {
+    ratingStyle.background = '#99cc00';
+    ratingStyle['border-color'] = 'white';
+  }
+  if (rating >= 5 && rating < 6) {
+    ratingStyle.background = '#cccc00';
+    ratingStyle['border-color'] = 'white';
+  }
+  if (rating >= 0 && rating < 5) {
+    ratingStyle.background = 'tomato';
+    ratingStyle['border-color'] = 'white';
+  }
+  if (!rating) {
+    ratingStyle .background = 'grey';
+    ratingStyle['border-color'] = 'white';
+  }
+  return ratingStyle;
 }
 
 export default Prev;
