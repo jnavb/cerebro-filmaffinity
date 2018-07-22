@@ -10,28 +10,28 @@
   align-items: center;
   margin-bottom: 0.5em;
   font-size: 1.3em;
-  justify-content: space-between;
 }
 
 .rating {
-  margin-right: 5px;
-  width: 2.65em;
-  height: 2.65em; 
-  
+  width: 11em;
+  height: 1.6em;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 3em;
   border-style: solid;
+  border-color: var(--main-font-color);
+  font-size: .8em;
+  margin-right: .5em
 }
+
 .rating > span {
   font-size: 1.5em;
 }
 
 .title {
-  width: 70%;
+  width: 100%;
   font-size: 1em;
-  margin-left: 5px;
   text-align: center;
 }
 
@@ -39,38 +39,39 @@
   display: flex;
   align-items: flex-start;
 }
-
 .image {
-  font-size: .9em;
-  line-height: 150%;
+  margin-right: .7em;
+  overflow: hidden;
   min-width: 8em;
-  margin-right: 1em;
-}
-.image::after {
-  display: block;
-  clear: both;
-  content: "";
 }
 
-.poster {
+.imagePoster {
   height: 12em;
 }
 
-.footer {
+.imageFooter {
   color: var(--secondary-font-color);
   font-size: .9em;
-  margin-bottom: 0.5em;
+  margin-bottom: .2em;
   text-align: center;
+  line-height: 150%;
+  min-width: 8em;
 }
 
-.footer > span:first-child::before {
+.imageFooter > span:first-child::before {
   display: none;
 }
 
-.footer > span::before {
+.imageFooter > span::before {
   content: "|";
   color: var(--secondary-font-color);
   margin: 0px 5px;
+}
+
+.imageFooter::after {
+  display: block;
+  clear: both;
+  content: "";
 }
 
 .details {
@@ -81,6 +82,7 @@
   flex-direction: column;
   height: 12em;
   justify-content: space-around;
+  width: 100%;
 }
 .details dt {
   float: left;

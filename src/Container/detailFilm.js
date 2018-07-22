@@ -13,9 +13,10 @@ export class Prev extends React.Component {
   componentDidMount() {
     const { id } = this.props;
     detailFilm(id).then(filmPrev => {
-      if (filmPrev)
+      if (filmPrev){
         filmPrev = transformDetailFilm(filmPrev);
-      this.setState({ filmPrev });
+        this.setState({ filmPrev });
+      }
     })
   }
   render() {
@@ -58,26 +59,16 @@ const calculateBackground = (rating) => {
     ratingStyle.background = 'ForestGreen';
     ratingStyle['border-color'] = 'gold';
   }
-  if (rating >= 7 && rating < 8) {
+  if (rating >= 7 && rating < 8) 
     ratingStyle.background = 'ForestGreen';
-    ratingStyle['border-color'] = 'white';
-  }
-  if (rating >= 6 && rating < 7) {
+  if (rating >= 6 && rating < 7) 
     ratingStyle.background = '#99cc00';
-    ratingStyle['border-color'] = 'white';
-  }
-  if (rating >= 5 && rating < 6) {
+  if (rating >= 5 && rating < 6) 
     ratingStyle.background = '#cccc00';
-    ratingStyle['border-color'] = 'white';
-  }
-  if (rating >= 0 && rating < 5) {
+  if (rating >= 0 && rating < 5) 
     ratingStyle.background = 'tomato';
-    ratingStyle['border-color'] = 'white';
-  }
-  if (!rating) {
+  if (!rating) 
     ratingStyle .background = 'grey';
-    ratingStyle['border-color'] = 'white';
-  }
   return ratingStyle;
 }
 
