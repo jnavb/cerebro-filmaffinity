@@ -1,36 +1,48 @@
-/*
-.imdbPreview {
+.preview {
+  font-size: 1em;
   align-self: flex-start;
 }
 
-.imdbHeader::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-*/
-
-.imdbTitle {
+.header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
   font-size: 1.3em;
-  margin-bottom: 15px;
-  width: 75%;
+}
+
+.rating {
   margin-right: 5px;
-  float: left;
+  width: 2.65em;
+  height: 2.65em; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3em;
+  border-style: solid;
+}
+.rating > span {
+  font-size: 1.5em;
+}
+
+.title {
+  width: 80%;
+  font-size: 1em;
+  margin-left: 5px;
+  text-align: center;
 }
 
 .imdbRating {
   color: var(--secondary-font-color);
   font-size: .75em;
 }
-.imdbRatingNumber {
-  font-size: 2em;
-  color: var(--main-font-color);
-}
+
 
 .imdbMeta {
   color: var(--secondary-font-color);
   font-size: .8em;
-  margin: 10px 0;
+  margin-bottom: 0.5em;
 }
 
 .imdbMeta > span:first-child::before {
@@ -43,29 +55,21 @@
   margin: 0px 5px;
 }
 
-.imdbMain {
-  margin-bottom: 10px;
+.image {
   font-size: .9em;
   line-height: 150%;
 }
-.imdbMain::after {
+.image::after {
   display: block;
   clear: both;
   content: "";
 }
 
-.imdbPoster {
-  float: left;
-  max-width: 182px;
+.poster {
+  max-width: 6em;
   margin-right: 10px;
 }
 
-
-.imdbYear {
-  margin-left: 5px;
-  font-size: .95em;
-  color: var(--secondary-font-color);
-}
 
 .imdbDetails {
   font-size: .9em;
@@ -87,3 +91,4 @@
   margin: 0;
   text-align: left;
 }
+
