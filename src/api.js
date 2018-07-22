@@ -15,7 +15,7 @@ export const scoreFilm = memoize((url) =>(
 ))
 
 export const detailFilm = memoize((id) =>(
-  fetch(`${BASE_URL_DETAIL}/api/movie/${id}?lang=EN`)
+  fetch(`${BASE_URL_DETAIL}/api/movie/${id}?lang=ES`)
   .then(response => response.json())
 ))
 
