@@ -42,17 +42,17 @@
 .image {
   margin-right: .7em;
   overflow: hidden;
-  min-width: 8em;
+  width: 13em;
 }
 
 .imagePoster {
   height: 12em;
+  overflow: hidden;
 }
 
 .imageFooter {
   color: var(--secondary-font-color);
   font-size: .9em;
-  margin-bottom: .2em;
   text-align: center;
   line-height: 150%;
   min-width: 8em;
@@ -98,12 +98,10 @@
   text-align: center;
 }
 
-
-
 .sinopsis {
   overflow: hidden;
   height: 9em;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
 }
