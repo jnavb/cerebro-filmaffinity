@@ -7,6 +7,7 @@ export const icon = filmaffinityIcon;
 
 const placeholderWait = {icon,
                 id: "0",
+                order: 11,
                 title: 'Type peli <movie>'
 }
 const placeholderSearching = {icon,
