@@ -3,10 +3,11 @@ Cerebro plugin to search movies info at the filmaffinity page
 
 ## TODO
 ### Main
-- Detail => css,js,react
 - Refactor Api
 - Refactor main index
 - Score on header
-###Film component
-- add min to duration prop
+- Add feature: Recommended movie 
+### Film component
 - Fix/erase imdbRating, idmbVotes, Genre, Released
+- Dinamic background score
+- Set Placeholder when promise is rejected
