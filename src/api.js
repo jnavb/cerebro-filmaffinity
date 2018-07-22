@@ -8,11 +8,6 @@ export const fetchFilms = memoize((q) => (
     .then(response => response.json())
     .then(json => json.result)
 ))
-export const scoreFilm = memoize((url) =>(
-  fetch(`${BASE_URL}/api/film/byId?id=/en/${url}`)
-  .then(response => response.json())
-  .then(json => json.result)
-))
 
 export const detailFilm = memoize((id) =>(
   fetch(`${BASE_URL_DETAIL}/api/movie/${id}?lang=ES`)
