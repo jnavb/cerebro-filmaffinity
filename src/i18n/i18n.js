@@ -1,10 +1,51 @@
-class language{
-	constructor(idiom){
-		this.lang = languages[idiom]
+import icon from '../assets/icon.png'
+
+export const translate = {
+	ES:{
+  	searching:{
+    	icon,
+    	id: "1",
+    	title: "Buscando películas..."
+  	},
+  	onHold:{
+    	icon,
+    	id: "0",
+    	order: 11,
+    	title: "film/peli <movie>"
+  	},
+  	notFound:{
+  	  icon,
+  	  id: "2",
+  	  title: "No se han encontrado películas."
+  	},
+  	directors: "Dirección",
+  	writers: "Guión",
+  	stars: "Reparto"
+  	
+	},
+	EN:{
+  	searching:{
+    	icon,
+    	id: "1",
+    	title: "Searching movies..."
+  	},
+  	onHold:{
+    	icon,
+    	id: "0",
+    	order: 11,
+    	title: "film/peli <movie/película>"
+  	},
+		notFound:{
+  	  icon,
+  	  id: "2",
+  	  title: "Not movies found."
+  	},
+  	directors: "Directors",
+  	writers: "Writers",
+  	stars: "Stars"  	
 	}
 }
 
-const languages = {
-	es:{a:1,b:2},
-	en:{a:3,b:4}
-}
+export default translate;
+
+

@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './styles.css'
+import translateTo from '../i18n/i18n'
 
 export const Film = (({
   title, year, poster_big, sinopsis, director,
-  script, rating, duration, cast, ratingBackground
+  script, rating, duration, cast, ratingBackground, language
 }) => {
   return (
     <div className={styles.preview}>
@@ -23,11 +24,11 @@ export const Film = (({
           </div>
         </div>
         <dl className={styles.details}>
-          {director && <dt>Directors</dt>}
+          {director && <dt>{translateTo[language].directors}</dt>}
           <dd>{director}</dd>
-          {script && <dt>Writers</dt>}
+          {script && <dt>{translateTo[language].writers}</dt>}
           <dd>{script}</dd>
-          {cast && <dt>Stars</dt>}
+          {cast && <dt>{translateTo[language].stars}</dt>}
           <dd>{cast}</dd>
         </dl>  
       </div>

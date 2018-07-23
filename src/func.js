@@ -1,28 +1,8 @@
-import icon from './assets/icon.png'
-
-
-export const placeholders ={
-  wait:{
-    icon,
-    id: "0",
-    order: 11,
-    title: "Type peli <movie>"
-  },
-  searching:{
-    icon,
-    id: "1",
-    title: "Searching movies..."
-  },
-  notFound:{
-    icon,
-    id: "2",
-    title: "No movies found"
-  }
-}
+const urlToID = (filmToParse) => filmToParse['url'].substring(8, filmToParse['url'].length - 5)
 
 export const transformFilm = (filmToParse) => {
   const film = {};
-  film.id = filmToParse['url'].substring(8, filmToParse['url'].length - 5);
+  film.id = filmToParse.id
   film.title = filmToParse['title'];
   film.subtitle = '';
   const { title } = film;
