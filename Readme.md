@@ -10,7 +10,7 @@ Inside cerebro bar, type:
 
 >film + name of the movie 
 
-To see the results on Spanish:
+To see the results on spanish:
 
 >peli + nombre de la película
 
