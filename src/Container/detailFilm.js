@@ -8,12 +8,12 @@ export class Prev extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filmPrev: null
+      filmPrev: null,
     }
   }
   componentDidMount() {
-    const { id } = this.props;
-    detailFilm(id).then(filmPrev => {
+    const { id, language } = this.props;
+    detailFilm(id, language).then(filmPrev => {
       if (filmPrev){
         filmPrev = transformDetailFilm(filmPrev);
         this.setState({ filmPrev });
@@ -22,11 +22,11 @@ export class Prev extends React.Component {
   }
   render() {
     const { filmPrev } = this.state;
-    return (filmPrev) ? <Film {...filmPrev}/>
-                  : <Loading />
+    
+    return (filmPrev) ? <Film {...filmPrev} language={this.props.language} />
+                      : <Loading />
   }
 }
-
 
 export default Prev;
 

@@ -1,16 +1,16 @@
 import {memoize} from 'cerebro-tools'
 
-const BASE_URL = 'https://filmaffinity-api.mybluemix.net'
-const BASE_URL_DETAIL = 'https://filmaffinity-unofficial.herokuapp.com'
+const BASE_URL = 'https://filmaffinity-unofficial.herokuapp.com'
 
-export const fetchFilms = memoize((q) => (
-  fetch(`${BASE_URL}/api/film/byTitle?title=${q}`)
-    .then(response => response.json())
-    .then(json => json.result)
+export const fetchFilms = memoize((q, language) => (
+	fetch(`${BASE_URL}/api/search?q=${q}&lang=${language}`)
+	.then(response => response.json())
 ))
 
-export const detailFilm = memoize((id) =>(
-  fetch(`${BASE_URL_DETAIL}/api/movie/${id}?lang=ES`)
+export const detailFilm = memoize((id, language) => (
+  fetch(`${BASE_URL}/api/movie/${id}?lang=${language}`)
   .then(response => response.json())
 ))
+
+
 
