@@ -11,7 +11,7 @@ export const translate = {
     	icon,
     	id: "0",
     	order: 11,
-    	title: "film/peli <movie>"
+    	title: "Type film/peli <movie>"
   	},
   	notFound:{
   	  icon,
@@ -33,7 +33,7 @@ export const translate = {
     	icon,
     	id: "0",
     	order: 11,
-    	title: "film/peli <movie/película>"
+    	title: "Type film/peli <movie>"
   	},
 		notFound:{
   	  icon,
