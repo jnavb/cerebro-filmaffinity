@@ -18,6 +18,7 @@ To see the results on spanish:
 
 * Press `enter` to navigate to film`s page.
 * Look the poster, user`s rating and more through the preview.
+* Language support: EN and ES.
 
 ## Related
 
