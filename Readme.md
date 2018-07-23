@@ -2,7 +2,7 @@
 
 [Cerebro](http://www.cerebroapp.com) plugin to search movies info at the filmaffinity page
 
-![] (pluginGif.gif)
+![](screenshot.gif)
 
 
 ## How to use
