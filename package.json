@@ -1,11 +1,16 @@
 {
-  "name": "my-plugin",
-  "version": "0.1.0",
+  "name": "cerebro-filmaffinity",
+  "version": "1.0.0",
+  "description": "Cerebro plugin to search movies info on filmaffinity",
+  "license": "MIT",
+  "repository": "jnavb/cerebro-filmaffinity",
+  "author": {
+    "name": "Jorge Navarro",
+    "email": "jorgenavb@gmail.com"
+  },
   "dependencies": {
     "cerebro-tools": "^0.1.0",
-    "cerebro-ui": "^0.0.16",
-    "react-transform-hmr": "^1.0.4",
-    "redbox-react": "^1.6.0"
+    "cerebro-ui": "^0.0.16"
   },
   "devDependencies": {
     "cerebro-scripts": "0.0.25",
@@ -14,7 +19,11 @@
   "main": "dist/index.js",
   "keywords": [
     "cerebro",
-    "cerebro-plugin"
+    "cerebro-plugin",
+    "films",
+    "pelicula",
+    "search",
+    "filmaffinity"
   ],
   "scripts": {
     "start": "cerebro-scripts start",
