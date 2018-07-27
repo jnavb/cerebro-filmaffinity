@@ -1,6 +1,6 @@
 {
   "name": "cerebro-filmaffinity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cerebro plugin to search movies info on filmaffinity",
   "license": "MIT",
   "repository": "jnavb/cerebro-filmaffinity",
