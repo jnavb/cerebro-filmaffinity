@@ -6,13 +6,11 @@
 
 
 ## How to use
-Inside cerebro bar, type:
+Inside cerebro bar:
 
->film + name of the movie 
-
-To see the results on spanish:
-
->peli + nombre de la película
+Type `film` and `<name of movie>` to see the results in :uk: 
+ 
+Type `peli` and `<nombre de la película>` to see the results in :es: 
 
 ## Features
 
@@ -25,4 +23,4 @@ To see the results on spanish:
 * [Cerebro](http://github.com/KELiON/cerebro) – Repo for Cerebro app;
 
 ## License
-MIT©
+MIT
