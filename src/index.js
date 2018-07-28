@@ -3,7 +3,6 @@ import filmaffinityIcon from './assets/icon.png'
 import translateTo from './i18n/i18n'
 import { transformFilm  } from './func'
 import { fetchFilms } from './api'
-import { onHold } from './func'
 
 const icon = filmaffinityIcon;
 
@@ -34,7 +33,7 @@ const runPlugin = (match, display, actions, hide, language) => {
             id: film.id,
             title: film.title,
             subtitle: film.subtitle,
-            onSelect: () => actions.open(`https://www.filmaffinity.com/es/film${item['url'].substring(8)}`),
+            onSelect: () => actions.open(`https://www.filmaffinity.com/${language.toLowerCase()}/film${film.id}.html`),
             getPreview: () => <Preview id={film.id} key={film.id} language={language} />
           })
         })
