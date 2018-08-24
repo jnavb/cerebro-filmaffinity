@@ -10,7 +10,7 @@ export const translate = {
   	onHold:{
     	icon,
     	id: "0",
-    	order: 11,
+    	order: 9999,
     	title: "Type film/peli <movie>"
   	},
   	notFound:{
@@ -32,7 +32,7 @@ export const translate = {
   	onHold:{
     	icon,
     	id: "0",
-    	order: 11,
+    	order: 9999,
     	title: "Type film/peli <movie>"
   	},
 		notFound:{
